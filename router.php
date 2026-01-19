@@ -13,12 +13,19 @@ $params = explode('/', $action);
 // endpoints
 // list --> lista de tareas --> showTasks()
 // add --> agregar tarea --> addTask()
+// delete/:ID --> removeTask($id)
 switch ($params[0]) {
     case 'home':
         showTasks();
         break;
     case 'add':
         addTask();
+        break;
+    case 'delete':
+        removeTask($params[1]);
+        break;
+    case 'completed':
+        completedTask($params[1]);
         break;
     default:
     break;
